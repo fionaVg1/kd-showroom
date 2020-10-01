@@ -1,5 +1,22 @@
 <template>
-  <div class="personalPerformance">
-    <h1>This is an about page</h1>
+  <div class="personalPerformance">   
+    <OrgRelationChart></OrgRelationChart>
   </div>
 </template>
+<script>
+import OrgRelationChart from '@/components/OrgRelationChart.vue'
+export default {
+    name:'PersonalPerformance',
+    components:{OrgRelationChart}
+}
+</script>
+
+<style scoped lang="scss"> 
+    .personalPerformance{
+        width: 60rem;
+        float: left;
+        padding-left: 4.576rem;
+        position: relative;     
+    }
+</style>
+

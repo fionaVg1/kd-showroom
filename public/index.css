@@ -1,0 +1,17 @@
+*{box-sizing: border-box}
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.0;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
+    background-color: #081127; 
+}
