@@ -6,7 +6,7 @@
                 <i class="photo"></i>
                 <span class="span4">{{item.name}}</span>
             </span>
-            <span class="span3"></span>
+            <span class="span3">{{item.pos}}</span>
         </div>
         <div class="rows">
             <span class="field field1">指标</span>
@@ -41,6 +41,10 @@ export default {
         margin: 0 0.4rem 0.8rem;
         position: relative;
         background-size: contain;
+    }
+    .rows {
+        width: 100%;
+        float: left;
     }
     .topline, .bottomline{
         height: 0.416rem;
@@ -98,6 +102,33 @@ export default {
         .span1{
             color: #2FDBF1;
         }
+    }
+    .photo{
+        float: left;
+        width: 0.864rem;
+        height: 0.864rem; 
+        display: inline-block;
+        border-radius: 100%;
+        margin-right: 0.304rem;
+        margin-left: 0.456rem;
+        background: url(../assets/header0.png) center no-repeat;
+        background-size: cover;
+    }
+    .field{
+        float: left;
+        font-size: 0.384rem;
+        color: #fff;
+        width: 33.33%;
+        margin-top: 0.48rem;
+        opacity: 0.7;
+        text-align: center;
+    }
+    .field2{
+        text-indent: 0.8rem;
+    }
+    .field3{
+        float: right;
+        text-align: right;
     }
 </style>
 
