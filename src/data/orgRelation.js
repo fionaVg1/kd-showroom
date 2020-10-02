@@ -18,7 +18,7 @@ export default {
     }],
     children: [{
             id: 11,
-            org: '城市住宅',
+            org: '城市住宅11',
             name: '张大志',
             pos: '总经理',
             indicators: [{
@@ -36,7 +36,7 @@ export default {
             }],
             children: [{
                 id: 111,
-                org: '高端城市住宅',
+                org: '高端城市住宅111',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -110,7 +110,7 @@ export default {
         },
         {
             id: 12,
-            org: '商业办公',
+            org: '商业办公121',
             name: '王强',
             pos: '总经理',
             indicators: [{
@@ -129,7 +129,7 @@ export default {
             children: [{
                 id: 121,
                 org: '高端城市住宅',
-                name: '孙敏敏',
+                name: '孙敏敏121',
                 pos: '项目经理',
                 indicators: [{
                     percent: 65.27,
@@ -220,7 +220,7 @@ export default {
             }],
             children: [{
                 id: 131,
-                org: '高端城市住宅',
+                org: '高端城市住宅131',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -294,7 +294,7 @@ export default {
         },
         {
             id: 14,
-            org: '城市住宅旧改',
+            org: '城市住宅旧改14',
             name: '王琦',
             pos: '项目经理',
             indicators: [{
@@ -312,7 +312,7 @@ export default {
             }],
             children: [{
                 id: 141,
-                org: '高端城市住宅',
+                org: '高端城市住宅141',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -385,7 +385,7 @@ export default {
             }]
         }, {
             id: 15,
-            org: '星际酒店',
+            org: '星际酒店15',
             name: '陈小玲',
             pos: '总经理',
             indicators: [{
@@ -403,7 +403,7 @@ export default {
             }],
             children: [{
                 id: 151,
-                org: '高端城市住宅',
+                org: '高端城市住宅151',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -495,7 +495,7 @@ export default {
             }],
             children: [{
                 id: 161,
-                org: '高端城市住宅',
+                org: '高端城市住宅161',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -587,7 +587,7 @@ export default {
             }],
             children: [{
                 id: 171,
-                org: '高端城市住宅',
+                org: '高端城市住宅171',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{
@@ -679,7 +679,7 @@ export default {
             }],
             children: [{
                 id: 181,
-                org: '高端城市住宅',
+                org: '高端城市住宅181',
                 name: '孙敏敏',
                 pos: '项目经理',
                 indicators: [{

@@ -4,7 +4,7 @@
             <span class="span1">{{item.org}}</span>
             <span class="span2">
                 <i class="photo"></i>
-                <span class="span4"></span>
+                <span class="span4">{{item.name}}</span>
             </span>
             <span class="span3"></span>
         </div>
@@ -54,6 +54,50 @@ export default {
     }
     .bottomline{
         bottom: -0.416rem;       
+    }
+    .span1, .span2, .span3{
+        float: left;
+        width: 33.3%;
+        line-height: 0.864rem;
+    }
+    .span1{
+        color: #F3A240;
+        font-size: 0.48rem;
+        text-align: left;
+    }
+    .span2{
+        color: #96CEFF;
+        font-size: 0.464rem;
+        text-align: center;
+    }
+    .span3{
+        color: #96CEFF;
+        font-size: 0.448rem;
+        text-align: right;
+    }
+    .row1{
+        .personalIndicator {
+            margin: 0 auto 0.8rem;
+        }
+        .span1{
+            color: #F1E30A;
+        }
+    }
+    .row2{
+        .personalIndicator {
+            float: left;
+        }
+        .span1{
+            color: #FF9F00;
+        }
+    }
+    .row3{
+        .personalIndicator {
+            float: left;
+        }
+        .span1{
+            color: #2FDBF1;
+        }
     }
 </style>
 
