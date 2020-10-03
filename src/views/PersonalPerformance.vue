@@ -30,5 +30,12 @@ export default {
         padding-left: 4.576rem;
         position: relative;     
     }
+    .ppRanking{
+        float: left;
+        width: 30rem;
+        margin-left: 3rem;
+        position: relative;
+        top: -5rem;
+    }
 </style>
 

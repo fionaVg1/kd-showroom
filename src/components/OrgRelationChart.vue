@@ -63,7 +63,7 @@ export default {
                 } 
             }
             this.thirdOrgs = this.secondOrgs[this.thirdIndex].children;
-         },20000);
+         },2000);
       }
   },
   mounted() {

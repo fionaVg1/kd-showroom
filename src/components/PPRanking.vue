@@ -1,7 +1,7 @@
 <template>
     <div class="ppRanking">
-        <RankingList :item="topItem"></RankingList>
-        <RankingList :item="bottomItem"></RankingList>
+        <RankingList :item="topItem" :isTop="true"></RankingList>
+        <RankingList :item="bottomItem" :isTop="false"></RankingList>
     </div>
 </template>
 <script>
@@ -16,7 +16,7 @@ export default {
         }
     },
     components: {RankingList},
-    mounted(){
+    created(){
         this.topItem = rankingData.top;
         this.bottomItem = rankingData.bottom;
     }
