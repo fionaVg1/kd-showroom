@@ -113,25 +113,5 @@ export default function getData () {
 }
 
 function setAdaption(size) {
-    if(!setPro){
-        var setPro = getSetPro();
-    }
-    return setPro * size;
-}
-
-function getSetPro(){
-    var setPro = 1;
-    var docEl = document.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function() {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            setPro = clientWidth / 960;
-            docEl.style.fontSize = 10 * (clientWidth / 960) + 'px';
-        };
-        recalc();
-    if (!document.addEventListener) return setPro;
-    window.addEventListener(resizeEvt, recalc, false);
-    document.addEventListener('DOMContentLoaded', recalc, false);
-    return setPro;
+    return window.setPro * size;
 }
