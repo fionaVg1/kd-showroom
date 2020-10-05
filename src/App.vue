@@ -32,7 +32,7 @@
 <style lang="scss">
 #app {
     width: 96rem;
-    height: 30rem;
+    height: 56rem;
     padding-bottom: 25%;
     overflow: hidden;
     background: url("./assets/bg22.png") center no-repeat #101631;
