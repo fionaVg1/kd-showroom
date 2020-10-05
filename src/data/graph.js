@@ -96,22 +96,6 @@ export default function getGraph () {
     }
 }
   
-function randomize () {
-    return [0, 0, 0].map(v => {
-      return Math.round(300 + Math.random() * 700) / 10
-    })
-}
-
-var mylineStyle = {
-    color:"#333",               //颜色，'rgb(128, 128, 128)'，'rgba(128, 128, 128, 0.5)'，支持线性渐变，径向渐变，纹理填充
-    shadowColor:"#71C3FF",      //阴影颜色
-    shadowOffsetX:0,            //阴影水平方向上的偏移距离。
-    shadowOffsetY:0,            //阴影垂直方向上的偏移距离
-    shadowBlur:10,              //图形阴影的模糊大小。
-    type:"solid",               //坐标轴线线的类型，solid，dashed，dotted
-    width:1,                    //坐标轴线线宽
-    opacity:1,                  //图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形
-};
 var webkitDep = {
     "type": "force",
     "categories": [//关系网类别，可以写多组

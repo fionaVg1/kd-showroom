@@ -9,7 +9,7 @@
    * px/rem = 20
    */
   function resize() {
-    var setPro = 1;
+    window.setPro = 1;
     (function(doc, win) {
       var docEl = doc.documentElement,
         resizeEvt =
@@ -17,8 +17,8 @@
         recalc = function() {
           var clientWidth = docEl.clientWidth;
           if (!clientWidth) return;
-          setPro = clientWidth / 960;
-          docEl.style.fontSize = 10 * setPro + "px";
+          window.setPro = clientWidth / 960;
+          docEl.style.fontSize = 10 * window.setPro + "px";
         };
       recalc();
       if (!doc.addEventListener) return;

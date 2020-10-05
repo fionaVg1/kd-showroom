@@ -81,12 +81,6 @@ export default function getData () {
 	}
 }
 
-function randomize () {
-	return [0, 0, 0].map(v => {
-		return Math.round(300 + Math.random() * 700) / 10
-	})
-}
-
 function setAdaption(size) {
     if(!setPro){
         var setPro = getSetPro();
