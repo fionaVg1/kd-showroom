@@ -71,7 +71,11 @@
 				},{
 					name: '员工满意度水平',
 					value: '99.5%',
-				}]
+				}],
+				RandomFocusTime: null,	// 随机聚焦子节点定时器
+				servicePersonTime: null,	// 累计服务人次定时器
+				EmployeeSatisfaction: null,	// 员工满意度定时器
+
 			}
 		},
 		created() {
@@ -80,7 +84,7 @@
 		methods: {
 			refreshData(){
 				var that = this;
-				setInterval(function(){
+				this.RandomFocusTime = setInterval(function(){
 					var datalength = that.graph.series[0].data.length;
 					var currRadom = parseInt(Math.random()*(datalength-5)+5);	// [5,18)
 					if(that.prevRandom != currRadom){
@@ -100,6 +104,19 @@
 						that.prevRandom = currRadom;
 					}
 				}, 5000)
+
+				this.servicePersonTime = setInterval(function(){
+					if(that.headerData[0].value < 1587765){
+						that.headerData[0].value += 1;
+					}else{
+						that.headerData[0].value = 1587645;
+					}
+				},30000)
+
+				this.EmployeeSatisfaction = setInterval(function(){
+					var randomS = parseInt(Math.random()*8+989)/10;		// [98.9,99.7)
+					that.headerData[4].value = randomS + '%';
+				},3000)
 			},
 		},
 		beforeDestroy(){
