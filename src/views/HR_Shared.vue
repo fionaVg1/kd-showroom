@@ -147,6 +147,7 @@
 	height: 80%;
 	background-color: #000;
 	display: inline-block;
+	
 	.echarts{
 		width: 100%;
 		height: 100%;
