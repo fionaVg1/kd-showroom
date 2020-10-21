@@ -8,7 +8,7 @@ export default function getGraph () {
             type: 'graph',
             // x: 100,
             // y: 20,
-            layout: 'force',
+            layout: 'none',    //force
             animation: false,
             roam: true,
             focusNodeAdjacency: true,
@@ -23,9 +23,9 @@ export default function getGraph () {
                 layoutAnimation:true,
                 // xAxisIndex : 0, //x轴坐标 有多种坐标系轴坐标选项
                 // yAxisIndex : 0, //y轴坐标
-                gravity:0.03,  //节点受到的向中心的引力因子。该值越大节点越往中心点靠拢。
-                edgeLength: 60,  //边的两个节点之间的距离，这个距离也会受 repulsion。[10, 50] 。值越小则长度越长
-                repulsion: 55  //节点之间的斥力因子。支持数组表达斥力范围，值越大斥力越大。
+                // gravity:0.03,  //节点受到的向中心的引力因子。该值越大节点越往中心点靠拢。
+                // edgeLength: 60,  //边的两个节点之间的距离，这个距离也会受 repulsion。[10, 50] 。值越小则长度越长
+                // repulsion: 55  //节点之间的斥力因子。支持数组表达斥力范围，值越大斥力越大。
             },
             data: webkitDep.nodes.map(function (node, idx) {
                 node.id = idx;
@@ -72,13 +72,7 @@ export default function getGraph () {
                     }
                 };
                 node.symbolSize = setAdaption(symbolSize);
-
-                if(webkitDep.bgimg[idx]){
-                    node.symbol = 'image://'+require('../assets/'+webkitDep.bgimg[idx]);
-                }else{
-                    var bgindex = parseInt(Math.random()*webkitDep.bgimg.length);
-                    node.symbol = 'image://'+require('../assets/'+webkitDep.bgimg[bgindex]);
-                }
+                node.symbol = 'image://'+require('../assets/'+node.src);
                 return node;
             }),
             categories: webkitDep.categories,
@@ -110,27 +104,32 @@ var webkitDep = {
             "name": "数智化HR共享\n服务中心",//节点名称
             "value": 0,
             x: setAdaption(100),
-            y: setAdaption(150)
+            y: setAdaption(150),
+            src: 'circle00.png'
         },{
             "name": "智能招聘",
             "value": 1,
             x: setAdaption(50),
-            y: setAdaption(120)
+            y: setAdaption(120),
+            src: 'circle03.png'
         },{
             "name": "薪酬社保",
             "value": 2,
             x: setAdaption(70),
-            y: setAdaption(190)
+            y: setAdaption(190),
+            src: 'circle04.png'
         },{
             "name": "基础人事",
             "value": 3,
             x: setAdaption(150),
-            y: setAdaption(120)
+            y: setAdaption(120),
+            src: 'circle01.png'
         },{
             "name": "假期考勤",
             "value": 4,
             x: setAdaption(150),
-            y: setAdaption(180)
+            y: setAdaption(180),
+            src: 'circle02.png'
         },{     // 基础人事子节点
             "name": "入职办理",
             "value": 5,
@@ -138,7 +137,8 @@ var webkitDep = {
             y: setAdaption(90),
             labelPos: 'left',
             beingProcessed: 35,
-            beenCompleted: 55
+            beenCompleted: 55,
+            src: 'circle01.png'
         },{
             "name": "电子合同",
             "value": 6,
@@ -146,7 +146,8 @@ var webkitDep = {
             y: setAdaption(90),
             labelPos: 'right',
             beingProcessed: 110,
-            beenCompleted: 85
+            beenCompleted: 85,
+            src: 'circle01.png'
         },{
             "name": "证明开具",
             "value": 7,
@@ -154,7 +155,8 @@ var webkitDep = {
             y: setAdaption(120),
             labelPos: 'right',
             beingProcessed: 30,
-            beenCompleted: 42
+            beenCompleted: 42,
+            src: 'circle01.png'
         },{
             "name": "离职办理",
             "value": 8,
@@ -162,7 +164,8 @@ var webkitDep = {
             y: setAdaption(150),
             labelPos: 'right',
             beingProcessed: 8,
-            beenCompleted: 12
+            beenCompleted: 12,
+            src: 'circle01.png'
         },{     // 智能招聘子节点
             "name": "简历解析",
             "value": 9,
@@ -170,7 +173,8 @@ var webkitDep = {
             y: setAdaption(100),
             labelPos: 'left',
             beingProcessed: 180,
-            beenCompleted: 460
+            beenCompleted: 460,
+            src: 'circle03.png'
         },{
             "name": "机器人面试",
             "value": 10,
@@ -178,7 +182,8 @@ var webkitDep = {
             y: setAdaption(140),
             labelPos: 'left',
             beingProcessed: 15,
-            beenCompleted: 30
+            beenCompleted: 30,
+            src: 'circle03.png'
         },{     // 薪酬社保子节点 50,180
             "name": "智能算薪",
             "value": 11,
@@ -186,7 +191,8 @@ var webkitDep = {
             y: setAdaption(170),
             labelPos: 'left',
             beingProcessed: 23,
-            beenCompleted: 68
+            beenCompleted: 68,
+            src: 'circle04.png'
         },{
             "name": "机器人社保",
             "value": 12,
@@ -194,7 +200,8 @@ var webkitDep = {
             y: setAdaption(200),
             labelPos: 'bottom',
             beingProcessed: 22,
-            beenCompleted: 56
+            beenCompleted: 56,
+            src: 'circle04.png'
         },{
             "name": "机器人报税",
             "value": 13,
@@ -202,7 +209,8 @@ var webkitDep = {
             y: setAdaption(235),
             labelPos: 'right',
             beingProcessed: 18,
-            beenCompleted: 48
+            beenCompleted: 48,
+            src: 'circle04.png'
         },{
             "name": "电子工资条",
             "value": 14,
@@ -210,7 +218,8 @@ var webkitDep = {
             y: setAdaption(230),
             labelPos: 'right',
             beingProcessed: 85,
-            beenCompleted: 168
+            beenCompleted: 168,
+            src: 'circle04.png'
         },{     // 假期考勤子节点 150，180
             "name": "语音请假",
             "value": 15,
@@ -218,7 +227,8 @@ var webkitDep = {
             y: setAdaption(180),
             labelPos: 'right',
             beingProcessed: 25,
-            beenCompleted: 56
+            beenCompleted: 56,
+            src: 'circle02.png'
         },{
             "name": "年假问询",
             "value": 16,
@@ -226,7 +236,8 @@ var webkitDep = {
             y: setAdaption(215),
             labelPos: 'right',
             beingProcessed: 210,
-            beenCompleted: 300
+            beenCompleted: 300,
+            src: 'circle02.png'
         },{
             "name": "智能排班",
             "value": 17,
@@ -234,7 +245,8 @@ var webkitDep = {
             y: setAdaption(215),
             labelPos: 'right',
             beingProcessed: 60,
-            beenCompleted: 120
+            beenCompleted: 120,
+            src: 'circle02.png'
         }
         
         
@@ -292,7 +304,7 @@ var webkitDep = {
             "target": 4
         }
     ],
-    "bgimg": ['111@2x.png', '33@2x.png', '66@2x.png', '44@2x.png', '55@2x.png']
+    "bgimg": ['circle00.png', '33@2x.png', '66@2x.png', '44@2x.png', '55@2x.png']
 };
 
 function setAdaption(size) {

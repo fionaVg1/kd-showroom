@@ -55,7 +55,7 @@
 				counter: 0,
 				prevRandom: 0,
 				currBgImg: '22@2x.png',
-				bgImgArr: ['111@2x.png', '33@2x.png', '66@2x.png', '44@2x.png', '55@2x.png'],
+				bgImgArr: ['circle00.png', 'circle03.png', 'circle04.png', 'circle01', '55@2x.png'],
 				headerData: [{
 					name: '累计服务人次',
 					value: 1587645,
@@ -85,24 +85,24 @@
 			refreshData(){
 				var that = this;
 				this.RandomFocusTime = setInterval(function(){
-					var datalength = that.graph.series[0].data.length;
-					var currRadom = parseInt(Math.random()*(datalength-5)+5);	// [5,18)
-					if(that.prevRandom != currRadom){
-						that.graph.series[0].data[currRadom].symbolSize = that.graph.series[0].data[currRadom].symbolSize + 20;
-						that.graph.series[0].data[currRadom].symbol = 'image://'+require('../assets/'+that.currBgImg);
-						that.graph.series[0].data[currRadom].label.normal.color = 'rgba(255,255,255,1)';
-						if(that.prevRandom != 0){
-							that.graph.series[0].data[that.prevRandom].symbolSize = that.graph.series[0].data[that.prevRandom].symbolSize - 20;
-							that.graph.series[0].data[that.prevRandom].label.normal.color = 'rgba(255,255,255,0.8)';
-							if(that.bgImgArr[that.prevRandom]){
-								that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[that.prevRandom]);
-							}else{
-								var imgbgRadom = parseInt(Math.random()*that.bgImgArr.length);
-								that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[imgbgRadom]);
-							}
-						}
-						that.prevRandom = currRadom;
-					}
+					// var datalength = that.graph.series[0].data.length;
+					// var currRadom = parseInt(Math.random()*(datalength-5)+5);	// [5,18)
+					// if(that.prevRandom != currRadom){
+					// 	that.graph.series[0].data[currRadom].symbolSize = that.graph.series[0].data[currRadom].symbolSize + 20;
+					// 	that.graph.series[0].data[currRadom].symbol = 'image://'+require('../assets/'+that.currBgImg);
+					// 	that.graph.series[0].data[currRadom].label.normal.color = 'rgba(255,255,255,1)';
+					// 	if(that.prevRandom != 0){
+					// 		that.graph.series[0].data[that.prevRandom].symbolSize = that.graph.series[0].data[that.prevRandom].symbolSize - 20;
+					// 		that.graph.series[0].data[that.prevRandom].label.normal.color = 'rgba(255,255,255,0.8)';
+					// 		if(that.bgImgArr[that.prevRandom]){
+					// 			that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[that.prevRandom]);
+					// 		}else{
+					// 			var imgbgRadom = parseInt(Math.random()*that.bgImgArr.length);
+					// 			that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[imgbgRadom]);
+					// 		}
+					// 	}
+					// 	that.prevRandom = currRadom;
+					// }
 				}, 5000)
 
 				this.servicePersonTime = setInterval(function(){
