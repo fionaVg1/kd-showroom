@@ -2,7 +2,7 @@
     <div class="ppHeader">
         <div class="photo"></div>
         <div class="info">
-            <div class="name">张少华</div>
+            <div class="name">张少华123</div>
             <div class="pos">环球集团<span>总经理</span></div>
         </div>
         <div class="completion">
@@ -43,6 +43,7 @@ export default {
         float: left;
         height: 100%;
         .name{
+            font-family: 'KINGDEEKB-Bold';
             font-size: 0.8rem;
             color: #FFFFFF;
             line-height: 1.4rem;

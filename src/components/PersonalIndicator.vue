@@ -35,8 +35,7 @@ export default {
 <style  scoped lang="scss">
     .personalIndicator{
         width: 12.8rem;
-        height: 6.08rem;
-        background: url(../assets/img2.png) center no-repeat;
+        height: 6.08rem;    
         padding: 0.32rem 0.8rem;
         margin: 0 0.4rem 0.8rem;
         position: relative;

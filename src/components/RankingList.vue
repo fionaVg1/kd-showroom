@@ -31,8 +31,7 @@ export default {
 <style lang="scss" scoped>
     .rankingList{
         width: 16.464rem;
-        height: 13rem;
-        background: url("../assets/tc.png") center 0rem no-repeat;
+        height: 13rem;     
         float: right;
         margin-top: 0.328rem;
         background-size: contain;

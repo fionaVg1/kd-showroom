@@ -18,8 +18,7 @@ export default {
 <style scoped lang="scss"> 
     .ppHeader{
         width: 50%;
-        height: 8rem;
-        background: url(../assets/group1.png) center top no-repeat;
+        height: 8rem;        
         background-size: contain;
         position: relative;
         margin: 0 auto;
