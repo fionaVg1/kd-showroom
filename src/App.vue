@@ -6,7 +6,7 @@
 <script>
   /**
    * 根据屏幕大小自适应
-   * px/rem = 20
+   * px/rem = 40
    */
   function resize() {
     window.setPro = 1;

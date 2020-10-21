@@ -54,7 +54,7 @@
 				},
 				counter: 0,
 				prevRandom: 0,
-				currBgImg: '22@2x.png',
+				// currBgImg: '22@2x.png',
 				bgImgArr: ['circle00.png', 'circle03.png', 'circle04.png', 'circle01', '55@2x.png'],
 				headerData: [{
 					name: '累计服务人次',
@@ -151,7 +151,7 @@
 				width: 2rem;
 				height: 2rem;
 				display: inline-block;
-				background: url("../assets/22@2x.png") center no-repeat;
+				// background: url("../assets/22@2x.png") center no-repeat;
 				background-size: contain;
 				position: relative;
 				top: 0.3rem;
