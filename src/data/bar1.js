@@ -20,8 +20,8 @@ export default function getData () {
 			}
 		},
 		legend: {
-			x:'right',      //可设定图例在左、右、居中
-			y:'top',     //可设定图例在上、下、居中
+			x:'right',      	//可设定图例在左、右、居中
+			y:'top',     		//可设定图例在上、下、居中
 			itemGap: setAdaption(16.5),
 			top: setAdaption(31.25),
 			padding:[0,setAdaption(9),0,0],   //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
@@ -52,7 +52,7 @@ export default function getData () {
 					return data + '%';
 				}
 			},
-			axisLine: { //x轴线的颜色以及宽度
+			axisLine: { 		//x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
                     color: "#535B6D",
@@ -80,7 +80,7 @@ export default function getData () {
 					color: 'rgba(255,255,255,0.8)'
 				}
 			},
-			axisLine: { //x轴线的颜色以及宽度
+			axisLine: { 		//x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
                     color: "#4B5365",
@@ -88,7 +88,7 @@ export default function getData () {
 					type: "solid"
 				}
 			},
-			"axisTick":{       //y轴刻度线
+			"axisTick":{       	//y轴刻度线
 				lineStyle: {
                     color: "#4B5365",
 					width: setAdaption(1),

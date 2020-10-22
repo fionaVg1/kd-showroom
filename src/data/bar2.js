@@ -10,12 +10,11 @@ export default function getData () {
 				color: '#00A9FF'
 			}
 		},
-		// legend: {},
 		color: ['#3398DB'],
 		tooltip: {
 			trigger: 'axis',
-			axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-				type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+			axisPointer: {			// 坐标轴指示器，坐标轴触发有效
+				type: 'shadow'		// 默认为直线，可选为：'line' | 'shadow'
 			}
 		},
 		grid: {
@@ -34,7 +33,7 @@ export default function getData () {
 					color: 'rgba(255,255,255,0.8)'
 				}
 			},
-			axisLine: { //x轴线的颜色以及宽度
+			axisLine: { 			//x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
                     color: "#4B5365",
@@ -44,7 +43,7 @@ export default function getData () {
 				symbol: ['line', 'arrow'],
 				symbolSize: [setAdaption(3.75),setAdaption(6)]
 			},
-			"axisTick":{       //y轴刻度线
+			"axisTick":{			//y轴刻度线
 				"show":false
 			},
 		},
@@ -60,7 +59,7 @@ export default function getData () {
 					return data + '%';
 				}
 			},
-			axisLine: { //x轴线的颜色以及宽度
+			axisLine: {				//x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
                     color: "#535B6D",
@@ -70,10 +69,10 @@ export default function getData () {
 				symbol: ['line', 'arrow'],
 				symbolSize: [setAdaption(3.75),setAdaption(6)]
 			},
-			"splitLine": {     //网格线
+			"splitLine": {			//网格线
 				"show": false
 			},
-			"axisTick":{       //y轴刻度线
+			"axisTick":{			//y轴刻度线
 				lineStyle: {
                     color: "#535B6D",
 					width: setAdaption(1),
