@@ -35,10 +35,9 @@
 	</div>
 </template>
 <script>
-	import 'echarts/lib/chart/graph'
 	import ECharts from 'vue-echarts'
+	import 'echarts/lib/chart/graph'
 	import getGraph from '../data/graph'
-
 	import 'echarts/lib/component/title'
 	import 'echarts/lib/component/legend'
 	import 'echarts/lib/chart/bar'

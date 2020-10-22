@@ -1,13 +1,13 @@
+import echarts from 'vue-echarts'
 export default function getData () {
 	return {
 		title: {
-			x: 'center',
-			y: '10%',
+			x: setAdaption(15),
+			y: setAdaption(12.5),
 			text: '共享中心服务对象满意度TOP5',
-			// subtext: '数据来自网络'
 			textStyle: {
-				fontSize: setAdaption(12),
-				color: '#fff'
+				fontSize: setAdaption(11.25),
+				color: '#00A9FF'
 			}
 		},
 		// legend: {},
@@ -19,49 +19,71 @@ export default function getData () {
 			}
 		},
 		grid: {
-			width: '80%',
-			height: '60%',
-			// top: '25',
-			left: '10%',
-			right: '4%',
-			bottom: '5%',
+			width: setAdaption(227.5),
+			height: setAdaption(132.75),
+			left: setAdaption(15),
+			top: setAdaption(36),
 			containLabel: true
 		},
 		xAxis: {
 			type: 'category',
-			data: ['上海', '深圳', '成都', '武汉', '北京'],
-			axisTick: {
-				alignWithLabel: true
+			data: ['上海公司', '深圳公司', '成都公司', '武汉公司', '北京公司'],
+			axisLabel: {
+				textStyle: {
+					fontSize: setAdaption(7),
+					color: 'rgba(255,255,255,0.8)'
+				}
 			},
 			axisLine: { //x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
-                    color: "rgba(219,225,255,1)",
-                    width: 0,
+                    color: "#4B5365",
+                    width: setAdaption(1),
 					type: "solid"
-				}
-            },
-			axisLabel: {
-				textStyle: {
-					fontSize: setAdaption(10),
-					color: '#96CEFF'
-				}
+				},
+				symbol: ['line', 'arrow'],
+				symbolSize: [setAdaption(3.75),setAdaption(6)]
 			},
-			// splitLine: {//分割线配置
-            //     show:false,
-            //     lineStyle: {
-            //         color: "rgba(219,225,255,1)",
-            //  	}
-			// }
+			"axisTick":{       //y轴刻度线
+				"show":false
+			},
 		},
 		yAxis: {
 			type: 'value',
+			boundaryGap: [0, 0.01],
 			axisLabel: {
-				show: false
+				textStyle: {
+					fontSize: setAdaption(7.5),
+					color: 'rgba(255,255,255,0.5)'
+				},
+				formatter: function(data) {
+					return data + '%';
+				}
 			},
-			axisLine: {
-				show: false
-			}
+			axisLine: { //x轴线的颜色以及宽度
+                show: true,
+                lineStyle: {
+                    color: "#535B6D",
+                    width: setAdaption(1),
+					type: "solid"
+				},
+				symbol: ['line', 'arrow'],
+				symbolSize: [setAdaption(3.75),setAdaption(6)]
+			},
+			"splitLine": {     //网格线
+				"show": false
+			},
+			"axisTick":{       //y轴刻度线
+				lineStyle: {
+                    color: "#535B6D",
+					width: setAdaption(1),
+					type: "solid"
+				},
+				axisMaxLabel: false
+			},
+			
+			interval: 25,
+			max:105,
 		},
 		series: [
 			{
@@ -69,13 +91,18 @@ export default function getData () {
 				type: 'bar',
 				barWidth: '30%',
 				data: [98, 96, 95, 92,90],
-				label: {
-					show: true,
-					position: 'insideTop',
-					formatter: function(data) {
-						return data.data + '%';
-					}
-				}
+				barGap: setAdaption(26.25),
+				itemStyle: {
+                    normal: {
+						color: new echarts.graphic.LinearGradient(
+							0, 0, 0, 1,
+							[
+								{offset: 0, color: '#1890FF'},                   //柱图渐变色
+								{offset: 1, color: '#4E73FE'},                   //柱图渐变色
+							]
+						)
+                    }
+                },
 			}
 		]
 	}

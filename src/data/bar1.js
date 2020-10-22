@@ -1,13 +1,12 @@
 export default function getData () {
 	return {
 		title: {
-			x: 'center',
-			y: '5%',
+			x: setAdaption(15),
+			y: setAdaption(12.5),
 			text: '员工不满意服务TOP3',
-			// subtext: '数据来自网络'
 			textStyle: {
-				fontSize: setAdaption(12),
-				color: '#fff'
+				fontSize: setAdaption(11.25),
+				color: '#00A9FF'
 			}
 		},
 		tooltip: {
@@ -21,24 +20,24 @@ export default function getData () {
 			}
 		},
 		legend: {
-			orient: 'vertical',
 			x:'right',      //可设定图例在左、右、居中
-			y:'bottom',     //可设定图例在上、下、居中
-			bottom:'5%',
-			// padding:[0,0,0,setAdaption(50)],   //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
-			data: ['态度', '效率', '质量'],
+			y:'top',     //可设定图例在上、下、居中
+			itemGap: setAdaption(16.5),
+			top: setAdaption(31.25),
+			padding:[0,setAdaption(9),0,0],   //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
+			itemHeight: setAdaption(6),
+			itemWidth: setAdaption(6),
+			data: [{name:'态度',icon: 'rect'}, {name:'效率',icon: 'rect'}, {name:'质量',icon: 'rect'}],
 			textStyle: {
-				fontSize: setAdaption(10),
+				fontSize: setAdaption(6),
 				color: '#96CEFF'
 			}
 		},
 		grid: {
-			width: '80%',
-			height: '65%',
-			// top: '25%',
-			left: '3%',
-			right: '4%',
-			bottom: '5%',
+			width: setAdaption(235),
+			height: setAdaption(132.75),
+			left: setAdaption(7.5),
+			top: setAdaption(48),
 			containLabel: true
 		},
 		xAxis: {
@@ -47,7 +46,7 @@ export default function getData () {
 			axisLabel: {
 				textStyle: {
 					fontSize: setAdaption(7.5),
-					color: '#96CEFF'
+					color: 'rgba(255,255,255,0.5)'
 				},
 				formatter: function(data) {
 					return data + '%';
@@ -56,11 +55,21 @@ export default function getData () {
 			axisLine: { //x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
-                    color: "rgba(219,225,255,1)",
-                    width: 0,
+                    color: "#535B6D",
+                    width: setAdaption(1),
 					type: "solid"
-				}
-            },
+				},
+				symbol: ['line', 'arrow'],
+				symbolSize: [setAdaption(3.75),setAdaption(6)]
+			},
+			"splitLine": {     //网格线
+				"show": false
+			},
+			"axisTick":{       //x轴刻度线
+				"show":false
+			},
+			interval: 25,
+			max:110,
 		},
 		yAxis: {
 			type: 'category',
@@ -68,60 +77,61 @@ export default function getData () {
 			axisLabel: {
 				textStyle: {
 					fontSize: setAdaption(7),
-					color: '#96CEFF'
+					color: 'rgba(255,255,255,0.8)'
 				}
 			},
 			axisLine: { //x轴线的颜色以及宽度
                 show: true,
                 lineStyle: {
-                    color: "rgba(219,225,255,1)",
-                    width: 0,
+                    color: "#4B5365",
+                    width: setAdaption(1),
 					type: "solid"
 				}
-            },
+			},
+			"axisTick":{       //y轴刻度线
+				lineStyle: {
+                    color: "#4B5365",
+					width: setAdaption(1),
+					type: "solid"
+				}
+			},
 		},
 		series: [
 			{
 				name: '态度',
 				type: 'bar',
+				barWidth: setAdaption(9),
+				barGap: '10%',
 				itemStyle: {
                     normal: {
                         color: "#1890FF",
                     }
                 },
 				data: [95, 85, 90],
-				label: {
-					show: true,
-					position: 'insideRight'
-				},
 			},
 			{
 				name: '效率',
 				type: 'bar',
+				barWidth: setAdaption(9),
+				barGap: '10%',
 				itemStyle: {
                     normal: {
                         color: "#45DAD1",
                     }
                 },
 				data: [92, 95, 90],
-				label: {
-					show: true,
-					position: 'insideRight'
-				},
 			},
 			{
 				name: '质量',
 				type: 'bar',
+				barWidth: setAdaption(9),
+				barGap: '10%',
 				itemStyle: {
                     normal: {
                         color: "#FFA940",
                     }
                 },
 				data: [88, 90, 95],
-				label: {
-					show: true,
-					position: 'insideRight'
-				},
 			}
 		]
 	}
