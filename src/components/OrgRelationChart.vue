@@ -49,17 +49,17 @@ export default {
       scrollOrgRelationChart: function(){
           let firstPage = true;     
           this.firstIndicator = orgRelation;
-          this.secondOrgs = this.firstIndicator.children.slice(0, 4);
+          this.secondOrgs = this.firstIndicator.children.slice(0, 3);
           this.thirdOrgs = this.secondOrgs[0].children;
           this.timer = setInterval(()=>{
             this.thirdIndex = this.thirdIndex +1;
-            if(this.thirdIndex === 4){
+            if(this.thirdIndex === 3){
                 this.thirdIndex = 0;            
                 firstPage = !firstPage;
                 if(firstPage){
-                    this.secondOrgs = this.firstIndicator.children.slice(0, 4);
+                    this.secondOrgs = this.firstIndicator.children.slice(0, 3);
                 }else{
-                    this.secondOrgs = this.firstIndicator.children.slice(4,8);
+                    this.secondOrgs = this.firstIndicator.children.slice(3,6);
                 } 
             }
             this.thirdOrgs = this.secondOrgs[this.thirdIndex].children;
@@ -83,22 +83,27 @@ export default {
     float: left;   
     position:relative;  
     .longline {
-      border-top: 0.032rem solid #7dfff3;
+      width: 46.375rem;
+      border-top: 0.05rem solid #08C2B6;
       position: absolute;
-      margin-left: 6.8rem;
+      margin-left: 11.95rem;
     }
-    .line1 {
-      width: 40.8rem;
-      top: 6.464rem;
+    .line1 {      
+      top: 12.55rem;
     }
-    .line2 {
-      width: 40.8rem;
-      top: 13.318rem;
+    .line2 {     
+      top: 25.675rem;
     }
     .rows {
       width: 100%;
-      float: left;
+      float: left;      
     }
+    .row1{
+        margin-top: 0.75rem;
+      }
+      .row2, .row3{
+        margin-top:2.55rem; 
+      }
   }
   </style>
 
