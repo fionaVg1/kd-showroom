@@ -1,14 +1,23 @@
 <template>
 	<div class="wrap">
 		<div class="header">
-			<div class="pagetitle">HR共享</div>
+			<div class="pagetitle">
+				<span class="logo"></span>HR共享
+			</div>
 			<ul class="msgbox">
-				<li v-for="(item, index) in headerData" :key="'header'+index">
-					<div class="fieldname">{{item.name}}</div>
-					<div class="fieldval">
-						<i></i>
-						<span>{{item.value}}</span>
+				<li v-for="(item, index) in headerData" :key="'header'+index" :class="'list'+index">
+					<template v-if="index == 0">
+						<div class="fieldval figure-bold">
+							<template v-for="(num, numindex) in serviceTime">
+								<span v-if="num == ','" class="comma" :key="'num'+numindex">{{num}}</span>
+								<span v-else class="numcard" :key="'num'+numindex">{{num}}</span>
+							</template>
+						</div>
+					</template>
+					<div v-else class="fieldval">
+						<span class="bignum figure">{{item.value}}</span>
 					</div>
+					<div class="fieldname">{{item.name}}</div>
 				</li>
 			</ul>
 		</div>
@@ -53,17 +62,15 @@
 				},
 				counter: 0,
 				prevRandom: 0,
-				// currBgImg: '22@2x.png',
+				currBgImg: '22@2x.png',
 				bgImgArr: ['circle00.png', 'circle03.png', 'circle04.png', 'circle01', '55@2x.png'],
+				serviceTime: ['1',',','5','8','7',',','6','4','5'],
 				headerData: [{
 					name: '累计服务人次',
 					value: 1587645,
 				},{
-					name: '成本节约',
-					value: '28%',
-				},{
-					name: '平均响应时间',
-					value: '5m',
+					name: '平均响应时间(m)',
+					value: '5',
 				},{
 					name: '自主化服务占比',
 					value: '65%',
@@ -110,11 +117,14 @@
 					}else{
 						that.headerData[0].value = 1587645;
 					}
+					var str = that.headerData[0].value.toLocaleString();
+					var arr = str.split('');
+					that.serviceTime = arr;
 				},30000)
 
 				this.EmployeeSatisfaction = setInterval(function(){
 					var randomS = parseInt(Math.random()*8+989)/10;		// [98.9,99.7)
-					that.headerData[4].value = randomS + '%';
+					that.headerData[3].value = randomS + '%';
 				},3000)
 			},
 		},
@@ -126,59 +136,132 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import './../assets/font/font.css';
 .wrap{
 	height: 54rem;
 }
+.figure{
+	font-family: 'KINGDEEKB-Regular';
+}
+.figure-bold{
+	font-family: 'KINGDEEKB-Bold';
+}
+.figure-light{
+	font-family: 'KINGDEEKB-Light';
+}
 .header{
 	width: 96rem;
-	height: 20%;
+	// height: 27.3148%;
+	margin-bottom: 0.75rem;
 	.pagetitle{
-		font-size: 3rem;
-		color: #fff;
+		.logo{
+			width: 7.5rem;
+			height: 3.75rem;
+			display: block;
+			background: url("../assets/logo.png") center no-repeat;
+			background-size: contain;
+			float: left;
+			margin-left: 1.75rem;
+			margin-right: 0.5rem;
+		}
+		font-size: 1.5rem;
+		color: rgb(171, 163, 163);
+		height: 4rem;
+		border-bottom: 0.25rem solid #188DF0;
+		box-sizing: border-box;
+		line-height: 3.75rem;
 	}
 	.msgbox{
 		color: #fff;
-		margin-top: 1rem;
+		height: 10.75rem;
+		padding: 2.625rem 0 2.225rem 2rem;
+		background-color: #27314A;
+		border-radius: 0 0 0 0.25rem;
 		li{
 			display: inline-block;
-			width: 20%;
 			font-size: 1.5rem;
+			.fieldname{
+				font-size: 1.125rem;
+				color: rgba(255,255,255,0.7);
+				letter-spacing: 5px;
+				margin-top: 1.1rem;
+			}
 			.fieldval{
 				line-height: 2rem;
+				height: 3.675rem;
+				.bignum{
+					font-size: 4.75rem;
+				}
 			}
-			i{
-				width: 2rem;
-				height: 2rem;
-				display: inline-block;
-				// background: url("../assets/22@2x.png") center no-repeat;
-				background-size: contain;
+		}
+		.list0{
+			text-align: center;
+			margin-right: 6.95rem;
+			.numcard{
+				width: 3.1rem;
+				height: 3.675rem;
+				background: #00A9FF;
+				border-radius: 7px;
+				float: left;
+				line-height: 3.675rem;
+				font-size: 3rem;
+				margin-right: 0.35rem;
+			}
+			.comma{
+				width: 1.1rem;
+				height: 3.675rem;
+				float: left;
+				line-height: 3.675rem;
+				font-size: 3rem;
 				position: relative;
-				top: 0.3rem;
+				top: 0.8rem;
+				left: -0.25rem;
 			}
+		}
+		.list1 .bignum{
+			color: #95DE64;
+		}
+		.list2 .bignum{
+			color: #1890FF;
+		}
+		.list3 .bignum{
+			color: #08C2B6;
+		}
+		.list1, .list2, .list3{
+			margin-right: 10rem;
 		}
 	}
 }
 .graphwrap{
-	width: 60%;
-	height: 80%;
-	background-color: #000;
-	display: inline-block;
+	width: 70.25rem;
+	height: 38.4rem;
+	background-color: #27314A;
+	float: left;
+	border-radius: 0 0.25rem 0 0;
 	.echarts{
 		width: 100%;
 		height: 100%;
 	}
 }
 .barwrap{
-	width: 40%;
+	width: 25rem;
 	height: 80%;
-	background-color: #242b3c;
-	display: inline-block;
+	float: right;
 	.bar{
 		width: 100%;
-		height: 50%;
+		height: 18.825rem;
+		background-color: #27314A;
+	}
+	.bar1{
+		border-radius: 0.25rem 0 0 0.25rem;
+	}
+	.bar2{
+		margin-top: 0.75rem;
+		border-radius: 0.25rem 0 0 0;
 	}
 }
 .echarts{
+	width: 100%;
 	height: 100%;
 }
 </style>
