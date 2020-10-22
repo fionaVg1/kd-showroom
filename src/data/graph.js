@@ -58,9 +58,9 @@ export default function getGraph () {
                         fontSize: setAdaption(fontsize),
                         align: textalign,
                         lineHeight: setAdaption(lineHeight),
-                        // textStyle: {
-                        //     color: "rgba(255,255,255,0.8)",
-                        // },
+                        textStyle: {
+                            // color: "rgba(255,255,255,0.6)",
+                        },
                         formatter: function(data) {
                             var item = data.data;
                             var result = item.name;

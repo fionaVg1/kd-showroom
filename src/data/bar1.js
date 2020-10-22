@@ -46,7 +46,7 @@ export default function getData () {
 			boundaryGap: [0, 0.01],
 			axisLabel: {
 				textStyle: {
-					fontSize: setAdaption(10),
+					fontSize: setAdaption(7.5),
 					color: '#96CEFF'
 				},
 				formatter: function(data) {
@@ -67,7 +67,7 @@ export default function getData () {
 			data: ['人事共享服务', '薪酬共享服务', '考勤共享服务'],
 			axisLabel: {
 				textStyle: {
-					fontSize: setAdaption(10),
+					fontSize: setAdaption(7),
 					color: '#96CEFF'
 				}
 			},
@@ -84,6 +84,11 @@ export default function getData () {
 			{
 				name: '态度',
 				type: 'bar',
+				itemStyle: {
+                    normal: {
+                        color: "#1890FF",
+                    }
+                },
 				data: [95, 85, 90],
 				label: {
 					show: true,
@@ -93,6 +98,11 @@ export default function getData () {
 			{
 				name: '效率',
 				type: 'bar',
+				itemStyle: {
+                    normal: {
+                        color: "#45DAD1",
+                    }
+                },
 				data: [92, 95, 90],
 				label: {
 					show: true,
@@ -102,6 +112,11 @@ export default function getData () {
 			{
 				name: '质量',
 				type: 'bar',
+				itemStyle: {
+                    normal: {
+                        color: "#FFA940",
+                    }
+                },
 				data: [88, 90, 95],
 				label: {
 					show: true,
