@@ -6,8 +6,8 @@ export default function getGraph () {
         tooltip: {},
         series: [{
             type: 'graph',
-            // x: 100,
-            // y: 20,
+            // x: 0,
+            // y: 0,
             layout: 'none',    //force
             animation: false,
             roam: true,
@@ -31,24 +31,28 @@ export default function getGraph () {
                 node.id = idx;
                 node.category = 0;
 
-                var fontsize = 10;
-                var symbolSize = 100;
+                var fontsize = 15;
+                // var symbolSize = 150;
                 var pos = 'inside';
                 var textalign = 'center';
-                var lineHeight = 11;
-                if(idx > 4){
-                    fontsize = 8
-                    symbolSize = 30
-                    lineHeight = 9
-                    pos = node.labelPos
-                    if(pos == 'left'){
-                        textalign = 'right'
-                    }else if(pos == 'right'){
-                        textalign = 'left'
-                    }
+                var lineHeight = 24;
+                if(idx == 11){
+                    fontsize = 5
+                    // symbolSize = 40
+                }else if(idx > 4){
+                    fontsize = 6.5
+                    // symbolSize = 50
+                    lineHeight = 10
+                    // pos = node.labelPos
+                    // if(pos == 'left'){
+                    //     textalign = 'right'
+                    // }else if(pos == 'right'){
+                    //     textalign = 'left'
+                    // }
                 }else if(idx > 0){
-                    symbolSize = 80;
-                    lineHeight = 9;
+                    fontsize = 12.5
+                    // symbolSize = 92;
+                    lineHeight = 17.5;
                 }
                 node.label = {
                     normal: {
@@ -61,17 +65,17 @@ export default function getGraph () {
                         textStyle: {
                             // color: "rgba(255,255,255,0.6)",
                         },
-                        formatter: function(data) {
-                            var item = data.data;
-                            var result = item.name;
-                            if(item.value > 4){
-                                result = item.name + '\n' + '处理中：' + item.beingProcessed + '\n' + '已完成：' + item.beenCompleted
-                            }
-                            return result;
-                        },
+                        // formatter: function(data) {
+                        //     var item = data.data;
+                        //     var result = item.name;
+                        //     if(item.value > 4){
+                        //         result = item.name + '\n' + '处理中：' + item.beingProcessed + '\n' + '已完成：' + item.beenCompleted
+                        //     }
+                        //     return result;
+                        // },
                     }
                 };
-                node.symbolSize = setAdaption(symbolSize);
+                // node.symbolSize = setAdaption(node.symbolSize);
                 node.symbol = 'image://'+require('../assets/'+node.src);
                 return node;
             }),
@@ -101,152 +105,170 @@ var webkitDep = {
     ],
     "nodes": [//展示的节点
         {
-            "name": "数智化HR共享\n服务中心",//节点名称
+            "name": "数智化HR\n共享服务中心",//节点名称
             "value": 0,
-            x: setAdaption(100),
-            y: setAdaption(150),
-            src: 'circle00.png'
+            x: setAdaption(0),
+            y: setAdaption(0),
+            src: 'circle00.png',
+            symbolSize: setAdaption(150)
         },{
-            "name": "智能招聘",
+            "name": "智能\n招聘",
             "value": 1,
-            x: setAdaption(50),
-            y: setAdaption(120),
-            src: 'circle03.png'
+            x: setAdaption(-120),
+            y: setAdaption(-90),
+            src: 'circle03.png',
+            symbolSize: setAdaption(92)
         },{
-            "name": "薪酬社保",
+            "name": "薪酬\n社保",
             "value": 2,
-            x: setAdaption(70),
-            y: setAdaption(190),
-            src: 'circle04.png'
+            x: setAdaption(-120),
+            y: setAdaption(80),
+            src: 'circle04.png',
+            symbolSize: setAdaption(92)
         },{
-            "name": "基础人事",
+            "name": "基础\n人事",
             "value": 3,
-            x: setAdaption(150),
-            y: setAdaption(120),
-            src: 'circle01.png'
+            x: setAdaption(280),
+            y: setAdaption(-40),
+            src: 'circle01-live.png',
+            symbolSize: setAdaption(121.73)
         },{
-            "name": "假期考勤",
+            "name": "假期\n考勤",
             "value": 4,
-            x: setAdaption(150),
-            y: setAdaption(180),
-            src: 'circle02.png'
+            x: setAdaption(80),
+            y: setAdaption(120),
+            src: 'circle02.png',
+            symbolSize: setAdaption(92)
         },{     // 基础人事子节点
             "name": "入职办理",
             "value": 5,
-            x: setAdaption(130),
-            y: setAdaption(90),
+            x: setAdaption(181.5),
+            y: setAdaption(-119.5),
             labelPos: 'left',
             beingProcessed: 35,
             beenCompleted: 55,
-            src: 'circle01.png'
+            src: 'circle01.png',
+            symbolSize: setAdaption(95)
         },{
             "name": "电子合同",
             "value": 6,
-            x: setAdaption(170),
-            y: setAdaption(90),
+            x: setAdaption(396.5),
+            y: setAdaption(-116.5),
             labelPos: 'right',
             beingProcessed: 110,
             beenCompleted: 85,
-            src: 'circle01.png'
+            src: 'circle01.png',
+            symbolSize: setAdaption(95)
         },{
             "name": "证明开具",
             "value": 7,
-            x: setAdaption(190),
-            y: setAdaption(120),
+            x: setAdaption(375),
+            y: setAdaption(40),
             labelPos: 'right',
             beingProcessed: 30,
             beenCompleted: 42,
-            src: 'circle01.png'
+            src: 'circle01.png',
+            symbolSize: setAdaption(95)
         },{
             "name": "离职办理",
             "value": 8,
-            x: setAdaption(170),
-            y: setAdaption(150),
+            x: setAdaption(200),
+            y: setAdaption(70),
             labelPos: 'right',
             beingProcessed: 8,
             beenCompleted: 12,
-            src: 'circle01.png'
+            src: 'circle01.png',
+            symbolSize: setAdaption(95)
         },{     // 智能招聘子节点
             "name": "简历解析",
             "value": 9,
-            x: setAdaption(20),
-            y: setAdaption(100),
+            x: setAdaption(-57.5),
+            y: setAdaption(-151),
             labelPos: 'left',
             beingProcessed: 180,
             beenCompleted: 460,
-            src: 'circle03.png'
+            src: 'circle03.png',
+            symbolSize: setAdaption(50)
         },{
             "name": "机器人面试",
             "value": 10,
-            x: setAdaption(20),
-            y: setAdaption(140),
+            x: setAdaption(-196),
+            y: setAdaption(-128),
             labelPos: 'left',
             beingProcessed: 15,
             beenCompleted: 30,
-            src: 'circle03.png'
+            src: 'circle03.png',
+            symbolSize: setAdaption(50)
         },{     // 薪酬社保子节点 50,180
             "name": "智能算薪",
             "value": 11,
-            x: setAdaption(30),
-            y: setAdaption(170),
+            x: setAdaption(-105),
+            y: setAdaption(0),
             labelPos: 'left',
             beingProcessed: 23,
             beenCompleted: 68,
-            src: 'circle04.png'
+            src: 'circle04.png',
+            symbolSize: setAdaption(40)
         },{
             "name": "机器人社保",
             "value": 12,
-            x: setAdaption(20),
-            y: setAdaption(200),
+            x: setAdaption(-195),
+            y: setAdaption(36),
             labelPos: 'bottom',
             beingProcessed: 22,
             beenCompleted: 56,
-            src: 'circle04.png'
+            src: 'circle04.png',
+            symbolSize: setAdaption(50)
         },{
             "name": "机器人报税",
             "value": 13,
-            x: setAdaption(50),
-            y: setAdaption(235),
+            x: setAdaption(-192.5),
+            y: setAdaption(155),
             labelPos: 'right',
             beingProcessed: 18,
             beenCompleted: 48,
-            src: 'circle04.png'
+            src: 'circle04.png',
+            symbolSize: setAdaption(50)
         },{
             "name": "电子工资条",
             "value": 14,
-            x: setAdaption(105),
-            y: setAdaption(230),
+            x: setAdaption(-75),
+            y: setAdaption(146.7),
             labelPos: 'right',
             beingProcessed: 85,
             beenCompleted: 168,
-            src: 'circle04.png'
+            src: 'circle04.png',
+            symbolSize: setAdaption(50)
         },{     // 假期考勤子节点 150，180
             "name": "语音请假",
             "value": 15,
-            x: setAdaption(190),
-            y: setAdaption(180),
+            x: setAdaption(121.5),
+            y: setAdaption(39),
             labelPos: 'right',
             beingProcessed: 25,
             beenCompleted: 56,
-            src: 'circle02.png'
+            src: 'circle02.png',
+            symbolSize: setAdaption(50)
         },{
             "name": "年假问询",
             "value": 16,
-            x: setAdaption(170),
-            y: setAdaption(215),
+            x: setAdaption(-5),
+            y: setAdaption(106),
             labelPos: 'right',
             beingProcessed: 210,
             beenCompleted: 300,
-            src: 'circle02.png'
+            src: 'circle02.png',
+            symbolSize: setAdaption(50)
         },{
             "name": "智能排班",
             "value": 17,
-            x: setAdaption(130),
-            y: setAdaption(215),
+            x: setAdaption(160),
+            y: setAdaption(151),
             labelPos: 'right',
             beingProcessed: 60,
             beenCompleted: 120,
-            src: 'circle02.png'
+            src: 'circle02.png',
+            symbolSize: setAdaption(50)
         }
         
         

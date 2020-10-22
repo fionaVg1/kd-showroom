@@ -139,6 +139,8 @@
 @import './../assets/font/font.css';
 .wrap{
 	height: 54rem;
+	// position: relative;
+    // top: -15rem;
 }
 .figure{
 	font-family: 'KINGDEEKB-Regular';
