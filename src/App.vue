@@ -37,5 +37,6 @@
     padding-bottom: 25%;
     overflow: hidden;
     background-size: contain;
+    font-family: 'SourceHanSansCN-Normal';
 }
 </style>
