@@ -75,23 +75,31 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.longline {
-  border-top: 0.032rem solid #7dfff3;
-  position: absolute;
-  margin-left: 6.8rem;
-}
-.line1 {
-  width: 40.8rem;
-  top: 6.464rem;
-}
-.line2 {
-  width: 40.8rem;
-  top: 13.318rem;
-}
-.rows {
-  width: 100%;
-  float: left;
-}
-</style>
+  .orgRelationChart{  
+    width: 70.25rem;
+    height: 38.4rem;
+    background: #27314A;
+    border-radius: 0px 10px 0px 0px;    
+    float: left;   
+    position:relative;  
+    .longline {
+      border-top: 0.032rem solid #7dfff3;
+      position: absolute;
+      margin-left: 6.8rem;
+    }
+    .line1 {
+      width: 40.8rem;
+      top: 6.464rem;
+    }
+    .line2 {
+      width: 40.8rem;
+      top: 13.318rem;
+    }
+    .rows {
+      width: 100%;
+      float: left;
+    }
+  }
+  </style>
 
 

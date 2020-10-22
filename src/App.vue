@@ -6,7 +6,7 @@
 <script>
   /**
    * 根据屏幕大小自适应
-   * px/rem = 20
+   * px/rem = 40
    */
   function resize() {
     window.setPro = 1;
@@ -37,5 +37,6 @@
     padding-bottom: 25%;
     overflow: hidden;
     background-size: contain;
+    font-family: 'SourceHanSansCN-Normal';
 }
 </style>

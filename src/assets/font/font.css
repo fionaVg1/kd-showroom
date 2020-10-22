@@ -10,3 +10,11 @@
     font-family: 'KINGDEEKB-Regular';
     src: url('KINGDEEKB-Regular.otf');
 }
+@font-face {
+    font-family: 'SourceHanSansCN-Medium';
+    src: url('SourceHanSansCN-Medium.otf');
+}
+@font-face {
+    font-family: 'SourceHanSansCN-Normal';
+    src: url('SourceHanSansCN-Normal.otf');
+}

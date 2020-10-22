@@ -30,12 +30,10 @@ export default {
 </script>
 <style lang="scss" scoped>
     .rankingList{
-        width: 16.464rem;
-        height: 13rem;     
-        float: right;
-        margin-top: 0.328rem;
-        background-size: contain;
-        padding-top: 1.712rem;
+        width: 25rem;
+        height: 18.82rem;
+        background: #27314A;
+        border-radius: 10px 0px 0px 10px;    
     }
     .listtitle{
         width: 12.32rem;
