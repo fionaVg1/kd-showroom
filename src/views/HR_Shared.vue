@@ -62,8 +62,7 @@
 				},
 				counter: 0,
 				prevRandom: 0,
-				currBgImg: '22@2x.png',
-				bgImgArr: ['circle00.png', 'circle03.png', 'circle04.png', 'circle01', '55@2x.png'],
+				graphCounter: 0,
 				serviceTime: ['1',',','5','8','7',',','6','4','5'],
 				headerData: [{
 					name: '累计服务人次',
@@ -90,25 +89,23 @@
 		methods: {
 			refreshData(){
 				var that = this;
+				that.graphCounter = 1;
 				this.RandomFocusTime = setInterval(function(){
-					// var datalength = that.graph.series[0].data.length;
-					// var currRadom = parseInt(Math.random()*(datalength-5)+5);	// [5,18)
-					// if(that.prevRandom != currRadom){
-					// 	that.graph.series[0].data[currRadom].symbolSize = that.graph.series[0].data[currRadom].symbolSize + 20;
-					// 	that.graph.series[0].data[currRadom].symbol = 'image://'+require('../assets/'+that.currBgImg);
-					// 	that.graph.series[0].data[currRadom].label.normal.color = 'rgba(255,255,255,1)';
-					// 	if(that.prevRandom != 0){
-					// 		that.graph.series[0].data[that.prevRandom].symbolSize = that.graph.series[0].data[that.prevRandom].symbolSize - 20;
-					// 		that.graph.series[0].data[that.prevRandom].label.normal.color = 'rgba(255,255,255,0.8)';
-					// 		if(that.bgImgArr[that.prevRandom]){
-					// 			that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[that.prevRandom]);
-					// 		}else{
-					// 			var imgbgRadom = parseInt(Math.random()*that.bgImgArr.length);
-					// 			that.graph.series[0].data[that.prevRandom].symbol = 'image://'+require('../assets/'+that.bgImgArr[imgbgRadom]);
-					// 		}
-					// 	}
-					// 	that.prevRandom = currRadom;
-					// }
+					if(that.graphCounter == 0){
+						that.graph.series[0].data = that.graph.data0;
+					}else if(that.graphCounter == 1){
+						that.graph.series[0].data = that.graph.data1;
+					}else 
+					if(that.graphCounter == 2){
+						that.graph.series[0].data = that.graph.data2;
+					}
+					else if(that.graphCounter == 3){
+						that.graph.series[0].data = that.graph.data3;
+					}
+					that.graphCounter += 1;
+					if(that.graphCounter > 3){
+						that.graphCounter = 0
+					}
 				}, 5000)
 
 				this.servicePersonTime = setInterval(function(){
