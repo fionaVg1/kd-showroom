@@ -54,8 +54,8 @@ export default function getGraph () {
                         color: color,
                         position: pos,
                         fontSize: setAdaption(fontsize),
-                        // align: idx == 0? 'center': '',
                         lineHeight: setAdaption(lineHeight),
+                        // backgroundColor: '#fff',
                         formatter: function(data) {
                             var item = data.data;
                             var result = item.name;
@@ -91,6 +91,10 @@ export default function getGraph () {
             //     repulsion: 100  //子节点之间的间距
             // },
             edges: webkitDep.links,
+            lineStyle: {
+                width: setAdaption(0.5),
+                // color: '#39E6F4'
+            }
             // emphasis: {
             //     lineStyle: {
             //         width: 10

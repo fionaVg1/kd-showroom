@@ -164,7 +164,7 @@
 			margin-right: 0.5rem;
 		}
 		font-size: 1.5rem;
-		color: rgb(171, 163, 163);
+		color: #fff;
 		height: 4rem;
 		border-bottom: 0.25rem solid #188DF0;
 		box-sizing: border-box;
