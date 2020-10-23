@@ -1,13 +1,14 @@
 <template>
     <div class="rankingList">
         <div class="listtitle">
-            <span>当月销售人员排行榜</span>            
-            <span>{{item.type}}</span>
+            <span>金蝶中国当月销售人员排行榜{{item.type}}</span>         
         </div>
         <ul class="list">
-            <li v-for="(item,index) in item.list" :key="item.id">
-                <i :class="{medal:true,'top':isTop}" :id="'medal'+item.id">{{index+1}}</i>
-                <i class="photo" :id="'photo'+item.id"></i>
+            <li v-for="(item,index) in item.list" :key="item.id" :class="{'top':isTop}">
+                <div class="medal" :id="'medal'+item.id">
+                    <span class="index" v-if="isTop">{{index+1}}</span> 
+                    <span class="index" v-else>{{index+80}}</span>                               
+                </div>
                 <span class="name">{{item.name}}</span>
                 <span class="figure">{{item.figure}}</span>                
             </li>
@@ -35,90 +36,88 @@ export default {
         background: #27314A;
         border-radius: 10px 0px 0px 10px;    
     }
-    .listtitle{
-        width: 12.32rem;
-        margin-bottom: 0.32rem;
-        margin-left: 2rem;
-        float: left;
-        span{
-            font-size: 0.82rem;
-            color: #FFFFFF;
-            float: left;
-        }
-        span:first-child{
-            width: 70%;
-            text-align: center;
-        }
-        span:last-child{
-            float: right;
-            width: 3rem;
-        }
+    .listtitle{   
+        margin-left:1.5rem;
+        margin-bottom:1.25rem;
+        padding-top: 1rem;     
+        span{            
+            height: 1.125rem;
+            font-size: 1.125rem;
+            font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+            font-weight: 500;
+            color: #00A9FF;
+            line-height: 1.125rem;
+        }        
     }
     .list{
-        width: 12.32rem;
-        margin: 0 auto;
-        li{
-            font-size: 0.576rem;
-            color: #96CEFF;          
-            width: 100%;
-            float: left;
-            margin-left:0.6rem;
-            margin-top:0.2rem;
-            margin-bottom:0.5rem;
+        margin-left:1.5rem;       
+        li{            
+            height: 2.4rem;
+            font-size: 0.9rem;           
+            font-weight: 400;
+            color: #FF9400;
+            line-height: 1.35rem;  
+            margin-bottom: 0.6rem;        
             .medal{
-                float: left;
-                width: 0.624rem;
-                height: 1rem;
-                margin-right: 1rem;
-                font-style: normal;
-                line-height: 1rem;
-                text-align: center;
-            }
-            .photo{
-                float: left;
-                width: 1.2rem;
-                height: 1.2rem;
-                margin-right: 1rem;
-                font-style: normal;
-                line-height: 1rem;
-                text-align: center;
-                background: url("../assets/header1.png") center no-repeat;
-                background-size: contain;
-                margin-top:-0.1rem;
-            }
-            .name{
-                float:left;
-                width:3rem;
-                height:1rem;
-                line-height:1rem;
-            }
-            .figure{
-                float:right;
-                width:5rem;
-                height:1rem;
-                line-height:1rem;
-                text-align:center;
+                float: left; 
+                width: 2.4rem;               
+                height: 2.4rem;                             
+                border-radius: 1.2rem; 
+                background:#35425E;
+                position: relative;
+                margin-right:2.75rem;
+                .index{
+                    font-size: 1rem;      
+                    font-weight: 400;
+                    color: #D3D5DA;
+                    line-height: 2.4rem;   
+                    position:absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                }               
+              
+            } 
+            .name,.figure{
+                float:left;                
+                height: 2.4rem;
+                font-size: 0.9rem;                
+                font-weight: 400;
+                color: #FFFFFF;
+                line-height: 2.4rem;                
+            }           
+            .figure{  
+                float: right;             
+                margin-right: 3.025rem;
             }
         }
-        li:first-child{
-            color: #F0C419;
-            .top{
+        li.top:first-child{
+            .name,.figure{
+                color: #FF9400;
+            }
+            .medal{
                 background: url("../assets/medal-gold.png") center no-repeat;
-                background-size: contain;
+                background-size: contain;                
+                -webkit-text-fill-color: transparent;
             }
         }
-        li:nth-of-type(2){
-            color: #ECF0F1;
-            .top{
+        li.top:nth-of-type(2){
+            .name,.figure{
+                color: #96BFFF;
+            }
+            .medal{
                 background: url("../assets/medal-silver.png") center no-repeat;
-                background-size: contain;
+                background-size: contain;                
+                -webkit-text-fill-color: transparent;
             }
         }
-        li:nth-of-type(3){
-            color: #F3A240;
-            .top{
+        li.top:nth-of-type(3){
+            .name,.figure{
+                color: #FFBD92;
+            }
+            .medal{
                 background: url("../assets/medal-bronze.png") center no-repeat;
-                background-size: contain;
+                background-size: contain;                
+                -webkit-text-fill-color: transparent;
             }
         }
     }

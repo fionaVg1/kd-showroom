@@ -35,7 +35,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .progressBar{
-        margin-top:0.8rem;
+        margin-top:0.7rem;
         .desc{
             position: relative;
             .title{   
